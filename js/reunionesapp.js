@@ -58,8 +58,7 @@ angular.module('ListadoApp',[])
     bindings: {},
     controller:function(reunionesFactory, $filter){
         var vm = this; 
-        var vm_formularioreuniones = $ctrl.formularioreuniones;
-        console.log(vm_formularioreuniones);
+
         vm.reuniones = reunionesFactory.getReuniones();
         vm.funciones = {
             borrarReunion: function (reunionobj) {
