@@ -1,0 +1,32 @@
+<div class="col-lg-5">
+<form name="form_reunion">
+    <div class="form-group">
+        <label>Nombre del organizador: </label>
+        <input type="text" required class="form-control" placeholder="Ej. Cosme Fulanito" id="organizador" ng-model="$ctrl.reunion.organizador">
+    </div>
+    <div class="form-group">
+        <label>Título de la reunión: </label>
+        <input type="text" required class="form-control" placeholder="Ej. Cumpleaños de Sara Bustani" id="titulo" ng-model="$ctrl.reunion.titulo">
+    </div>
+    <div class="form-group">
+        <label>Fecha y hora (ISO): </label>
+        <input type="datetime-local" required class="form-control" placeholder="Formato aaaa-MM-ddTHH:mm" id="fechahora" ng-model="$ctrl.reunion.fechahora">
+    </div>
+    <div class="form-group">
+        <label>Lugar: </label>
+        <input type="text" required class="form-control" placeholder="Ej. Av. Siempreviva 742" id="lugar" ng-model="$ctrl.reunion.lugar">
+    </div>
+    <div class="checkbox">
+        <label>
+            <input id="requerido" type="checkbox" checked ng-model="$ctrl.reunion.requerido"> Solicitar RSVP a los invitados
+        </label>
+    </div>
+    <button class="btn btn-default" data-ng-disabled="form_reunion.$invalid" data-ng-click="$ctrl.funciones.agregarReunion($ctrl.reunion)">Guardar reunión</button>
+
+    	<!-- Muestra en pantalla los datos para debug, si fueran necesarios. Eliminar los comentarios: -->
+				
+				<pre>{{ $ctrl.reunion | json }}</pre>
+				<pre>{{ misReuniones | json }}</pre> 
+				
+</form>
+</div>

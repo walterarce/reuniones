@@ -1,0 +1,20 @@
+
+<div class="col-lg-5">
+<div class="list-group-item" data-ng-repeat="reunion in $ctrl.reuniones" >
+    <span>
+        <span class="pull-right glyphicon glyphicon-trash" role="button" data-ng-click="$ctrl.funciones.borrarReunion(reunion)"></span>
+        <span class="pull-right">&nbsp;&nbsp;</span>
+        <span class="pull-right glyphicon glyphicon-edit"  role="button" data-ng-click="$ctrl.funciones.editarReunion(reunion)"></span>
+    </span>
+    <h4 class="list-group-item-heading"><strong>{{reunion.titulo}}</strong></h4>
+    <p class="list-group-item-text" >
+        Organizado por {{reunion.organizador}}, el evento tendrá lugar el 
+        {{reunion.fechahora | date:'medium'}} a las {{reunion.hora}}Hs. en 
+        {{reunion.lugar}}.
+    </p>
+    <p class="list-group-item-text" data-ng-show="reunion.rsvp">
+        RSVP
+    </p>
+
+</div>
+</div>
