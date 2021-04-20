@@ -1,4 +1,4 @@
-angular.module('ListadoApp',[])
+angular.module('listareuniones',[])
 .factory("reunionesFactory", function(){
    /* declaracion del array con los ejemplos*/
     var  array_reuniones= [{
@@ -53,8 +53,9 @@ angular.module('ListadoApp',[])
     }
     return interface_reuniones;
 })/* Componente Lista de reuniones muestro la lista con sus funciones*/
+
 .component('listareuniones',{
-    templateUrl:'listacmp.html',
+    templateUrl:'./listacmp.html',
     bindings: {},
     controller:function(reunionesFactory, $filter){
         var vm = this; 
@@ -70,18 +71,5 @@ angular.module('ListadoApp',[])
              }
         }
     },
-})/* Componente Formulario, realizo el manejo de la informacion que impactara en la lista*/
-.component('formularioreuniones',{
-    templateUrl:'formulariocmp.html',
-    bindings: {},
-    controller:function(reunionesFactory){
-        var vm = this; 
-        vm.funciones = {
-              agregarReunion: function(reunionobj){
-                  reunionesFactory.nuevaReunion(reunionobj);
-                  vm.mensaje = "Reunion agregada";
-                  console.log(vm.mensaje)
-              }
-        }
-    },
 });
+

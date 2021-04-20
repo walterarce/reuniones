@@ -2,11 +2,11 @@
 <form name="form_reunion">
     <div class="form-group">
         <label>Nombre del organizador: </label>
-        <input type="text" required class="form-control" placeholder="Ej. Cosme Fulanito" id="organizador" ng-model="$ctrl.reunion.organizador">
+        <input type="text" required class="form-control" placeholder="Ej. Cosme Fulanito" id="organizador"   ng-if="$ctrl.organizador" ng-model="$ctrl.organizador">
     </div>
     <div class="form-group">
         <label>Título de la reunión: </label>
-        <input type="text" required class="form-control" placeholder="Ej. Cumpleaños de Sara Bustani" id="titulo" ng-model="$ctrl.reunion.titulo">
+        <input type="text" required class="form-control" placeholder="Ej. Cumpleaños de Sara Bustani{{$ctrl.titulo}}" id="titulo" ng-model="$ctrl.reunion.titulo">
     </div>
     <div class="form-group">
         <label>Fecha y hora (ISO): </label>
